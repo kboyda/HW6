@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <br /><a href="Default.aspx" style="color: #696969">Home</a>&nbsp; |&nbsp; <a href="NewRecipe.aspx" style="color: #696969">New Recipe</a>&nbsp; |&nbsp; <a href="AboutUs.aspx" style="color: #696969">About Us</a>&nbsp; |&nbsp; <a href="ContactUs.aspx" style="color: #696969">Contact</a>
     <div>
 
 
@@ -35,6 +36,9 @@
 
 
     </div>
+        <br />
+        <div class="footer" >@ 2014 Software Development & Design<br />
+            </div>
     </form>
 </body>
 </html>
