@@ -5,163 +5,84 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title> W.E.R.: Recipes</title>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <br /><a href="Default.aspx" style="color: #696969">Home</a>&nbsp; |&nbsp; <a href="NewRecipe.aspx" style="color: #696969">New Recipe</a>&nbsp; |&nbsp; <a href="AboutUs.aspx" style="color: #696969">About Us</a>&nbsp; |&nbsp; <a href="ContactUs.aspx" style="color: #696969">Contact</a>
+     <div class="center">
+        <div class="header">
+            <br />
+                Wicked Easy Recipes
+
+        </div>
+                Using 5 Ingedients or Less!
+        <br />
+        <br />
+        <a href="Default.aspx" style="color: #FFFFFF">Home</a>&nbsp; |&nbsp; 
+        <a href="NewRecipe.aspx" style="color: #FFFFFF">New Recipe</a>&nbsp; |&nbsp; 
+        <a href="AboutUs.aspx" style="color: #FFFFFF">About Us</a>&nbsp; |&nbsp; 
+        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact</a>
+    </div>
     <div>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_kboyda_HW6 %>" DeleteCommand="DELETE FROM [kboyda_HW6] WHERE [recipe_name] = @recipe_name" InsertCommand="INSERT INTO [kboyda_HW6] ([recipe_name], [submitted_by], [ingredient_1], [ingredient_2], [ingredient_3], [ingredient_4], [ingredient_5], [preparation], [notes]) VALUES (@recipe_name, @submitted_by, @ingredient_1, @ingredient_2, @ingredient_3, @ingredient_4, @ingredient_5, @preparation, @notes)" SelectCommand="SELECT * FROM [kboyda_HW6]" UpdateCommand="UPDATE [kboyda_HW6] SET [submitted_by] = @submitted_by, [ingredient_1] = @ingredient_1, [ingredient_2] = @ingredient_2, [ingredient_3] = @ingredient_3, [ingredient_4] = @ingredient_4, [ingredient_5] = @ingredient_5, [preparation] = @preparation, [notes] = @notes WHERE [recipe_name] = @recipe_name">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_kboyda_HW6 %>" DeleteCommand="DELETE FROM [kboyda_HW6.1] WHERE [recipeID] = @recipeID" InsertCommand="INSERT INTO [kboyda_HW6.1] ([recipe_name], [submitted_by], [ingred_1], [ingred_2], [ingred_3], [ingred_4], [ingred_5], [preparation], [notes]) VALUES (@recipe_name, @submitted_by, @ingred_1, @ingred_2, @ingred_3, @ingred_4, @ingred_5, @preparation, @notes)" SelectCommand="SELECT * FROM [kboyda_HW6.1]" UpdateCommand="UPDATE [kboyda_HW6.1] SET [recipe_name] = @recipe_name, [submitted_by] = @submitted_by, [ingred_1] = @ingred_1, [ingred_2] = @ingred_2, [ingred_3] = @ingred_3, [ingred_4] = @ingred_4, [ingred_5] = @ingred_5, [preparation] = @preparation, [notes] = @notes WHERE [recipeID] = @recipeID">
             <DeleteParameters>
-                <asp:Parameter Name="recipe_name" Type="String" />
+                <asp:Parameter Name="recipeID" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="recipe_name" Type="String" />
                 <asp:Parameter Name="submitted_by" Type="String" />
-                <asp:Parameter Name="ingredient_1" Type="String" />
-                <asp:Parameter Name="ingredient_2" Type="String" />
-                <asp:Parameter Name="ingredient_3" Type="String" />
-                <asp:Parameter Name="ingredient_4" Type="String" />
-                <asp:Parameter Name="ingredient_5" Type="String" />
+                <asp:Parameter Name="ingred_1" Type="String" />
+                <asp:Parameter Name="ingred_2" Type="String" />
+                <asp:Parameter Name="ingred_3" Type="String" />
+                <asp:Parameter Name="ingred_4" Type="String" />
+                <asp:Parameter Name="ingred_5" Type="String" />
                 <asp:Parameter Name="preparation" Type="String" />
                 <asp:Parameter Name="notes" Type="String" />
             </InsertParameters>
             <UpdateParameters>
+                <asp:Parameter Name="recipe_name" Type="String" />
                 <asp:Parameter Name="submitted_by" Type="String" />
-                <asp:Parameter Name="ingredient_1" Type="String" />
-                <asp:Parameter Name="ingredient_2" Type="String" />
-                <asp:Parameter Name="ingredient_3" Type="String" />
-                <asp:Parameter Name="ingredient_4" Type="String" />
-                <asp:Parameter Name="ingredient_5" Type="String" />
+                <asp:Parameter Name="ingred_1" Type="String" />
+                <asp:Parameter Name="ingred_2" Type="String" />
+                <asp:Parameter Name="ingred_3" Type="String" />
+                <asp:Parameter Name="ingred_4" Type="String" />
+                <asp:Parameter Name="ingred_5" Type="String" />
                 <asp:Parameter Name="preparation" Type="String" />
                 <asp:Parameter Name="notes" Type="String" />
-                <asp:Parameter Name="recipe_name" Type="String" />
+                <asp:Parameter Name="recipeID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="recipe_name" DataSourceID="SqlDataSource1">
-            <EditItemTemplate>
-                recipe_name:
-                <asp:Label ID="recipe_nameLabel1" runat="server" Text='<%# Eval("recipe_name") %>' />
-                <br />
-                submitted_by:
-                <asp:TextBox ID="submitted_byTextBox" runat="server" Text='<%# Bind("submitted_by") %>' />
-                <br />
-                ingredient_1:
-                <asp:TextBox ID="ingredient_1TextBox" runat="server" Text='<%# Bind("ingredient_1") %>' />
-                <br />
-                ingredient_2:
-                <asp:TextBox ID="ingredient_2TextBox" runat="server" Text='<%# Bind("ingredient_2") %>' />
-                <br />
-                ingredient_3:
-                <asp:TextBox ID="ingredient_3TextBox" runat="server" Text='<%# Bind("ingredient_3") %>' />
-                <br />
-                ingredient_4:
-                <asp:TextBox ID="ingredient_4TextBox" runat="server" Text='<%# Bind("ingredient_4") %>' />
-                <br />
-                ingredient_5:
-                <asp:TextBox ID="ingredient_5TextBox" runat="server" Text='<%# Bind("ingredient_5") %>' />
-                <br />
-                preparation:
-                <asp:TextBox ID="preparationTextBox" runat="server" Text='<%# Bind("preparation") %>' />
-                <br />
-                notes:
-                <asp:TextBox ID="notesTextBox" runat="server" Text='<%# Bind("notes") %>' />
-                <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </EditItemTemplate>
-            <InsertItemTemplate>
-                <table>
-
-                    <tr>
-
-                        <td>
-                            Recipe Name:
-                        </td>
-
-                         <td>
-                              <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("recipe_name") %>' />
-                        </td>
-
-                    </tr>
-
-
-                </table>
-
-
-
-                recipe_name:
-                <asp:TextBox ID="recipe_nameTextBox" runat="server" Text='<%# Bind("recipe_name") %>' />
-                <br />
-                submitted_by:
-                <asp:TextBox ID="submitted_byTextBox" runat="server" Text='<%# Bind("submitted_by") %>' />
-                <br />
-                ingredient_1:
-                <asp:TextBox ID="ingredient_1TextBox" runat="server" Text='<%# Bind("ingredient_1") %>' />
-                <br />
-                ingredient_2:
-                <asp:TextBox ID="ingredient_2TextBox" runat="server" Text='<%# Bind("ingredient_2") %>' />
-                <br />
-                ingredient_3:
-                <asp:TextBox ID="ingredient_3TextBox" runat="server" Text='<%# Bind("ingredient_3") %>' />
-                <br />
-                ingredient_4:
-                <asp:TextBox ID="ingredient_4TextBox" runat="server" Text='<%# Bind("ingredient_4") %>' />
-                <br />
-                ingredient_5:
-                <asp:TextBox ID="ingredient_5TextBox" runat="server" Text='<%# Bind("ingredient_5") %>' />
-                <br />
-                preparation:
-                <asp:TextBox ID="preparationTextBox" runat="server" Text='<%# Bind("preparation") %>' />
-                <br />
-                notes:
-                <asp:TextBox ID="notesTextBox" runat="server" Text='<%# Bind("notes") %>' />
-                <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </InsertItemTemplate>
-            <ItemTemplate>
-
-                
-
-
-                recipe_name:
-                <asp:Label ID="recipe_nameLabel" runat="server" Text='<%# Eval("recipe_name") %>' />
-                <br />
-                submitted_by:
-                <asp:Label ID="submitted_byLabel" runat="server" Text='<%# Bind("submitted_by") %>' />
-                <br />
-                ingredient_1:
-                <asp:Label ID="ingredient_1Label" runat="server" Text='<%# Bind("ingredient_1") %>' />
-                <br />
-                ingredient_2:
-                <asp:Label ID="ingredient_2Label" runat="server" Text='<%# Bind("ingredient_2") %>' />
-                <br />
-                ingredient_3:
-                <asp:Label ID="ingredient_3Label" runat="server" Text='<%# Bind("ingredient_3") %>' />
-                <br />
-                ingredient_4:
-                <asp:Label ID="ingredient_4Label" runat="server" Text='<%# Bind("ingredient_4") %>' />
-                <br />
-                ingredient_5:
-                <asp:Label ID="ingredient_5Label" runat="server" Text='<%# Bind("ingredient_5") %>' />
-                <br />
-                preparation:
-                <asp:Label ID="preparationLabel" runat="server" Text='<%# Bind("preparation") %>' />
-                <br />
-                notes:
-                <asp:Label ID="notesLabel" runat="server" Text='<%# Bind("notes") %>' />
-                <br />
-                <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
-            </ItemTemplate>
-        </asp:FormView>
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="recipeID" DataSourceID="SqlDataSource1" Height="50px" HorizontalAlign="Center" Width="245px">
+             <CommandRowStyle BackColor="#FFFF99" Font-Bold="True" />
+             <EditRowStyle BackColor="LightCoral" />
+             <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+            <Fields>
+                <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
+                <asp:BoundField DataField="submitted_by" HeaderText="Submitted By" SortExpression="submitted_by" />
+                <asp:BoundField DataField="ingred_1" HeaderText="Ingredient #1" SortExpression="ingred_1" />
+                <asp:BoundField DataField="ingred_2" HeaderText="Ingredient #2" SortExpression="ingred_2" />
+                <asp:BoundField DataField="ingred_3" HeaderText="Ingredient #3" SortExpression="ingred_3" />
+                <asp:BoundField DataField="ingred_4" HeaderText="Ingredient #4" SortExpression="ingred_4" />
+                <asp:BoundField DataField="ingred_5" HeaderText="Ingredient #5" SortExpression="ingred_5" />
+                <asp:BoundField DataField="preparation" HeaderText="Preparation" SortExpression="preparation" />
+                <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            </Fields>
+             <FooterStyle BackColor="#FFFF99" Font-Bold="True" ForeColor="White" />
+             <HeaderStyle BackColor="#FFFF99" Font-Bold="True" ForeColor="White" />
+             <PagerStyle BackColor="#FFFF99" ForeColor="LightCoral" HorizontalAlign="Center" />
+             <RowStyle BackColor="LightCoral" />
+        </asp:DetailsView>
+        <br />
+        <span class="delRecipe"><asp:Label ID="lbl_delRecipe" runat="server"></asp:Label></span>
+        <br />
     
     </div>
         <br />
-        <div class="footer" >@ 2014 Software Development & Design<br />
+         <div class="footer" >&#169 2014. Kboyda HW6 - Software Development & Design
+            <br />
             </div>
     </form>
 </body>

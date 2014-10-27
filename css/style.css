@@ -1,2 +1,6 @@
-﻿body {
-}
+﻿body {background-color: #D2B48C;}
+.footer {text-align: center; font-size: small; color: #FFFFFF; bottom: 3px}
+.header {text-align: center; font-size: x-large; font-weight: bold;}
+.center {text-align: center;}
+.delRecipe {text-align: center; color:red; font-style:italic;}
+.aboutus {text-align:left; padding:25%}

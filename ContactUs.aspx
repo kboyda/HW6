@@ -6,11 +6,26 @@
 
 <head runat="server">
     <title>Web Contact Form</title>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
     <form id="form1" runat="server">
-        <br /><a href="Default.aspx" style="color: #696969">Home</a>&nbsp; |&nbsp; <a href="NewRecipe.aspx" style="color: #696969">New Recipe</a>&nbsp; |&nbsp; <a href="AboutUs.aspx" style="color: #696969">About Us</a>&nbsp; |&nbsp; <a href="ContactUs.aspx" style="color: #696969">Contact</a>
+           <div class="center">
+        <div class="header">
+            <br />
+                Wicked Easy Recipes
+
+        </div>
+                Using 5 Ingedients or Less!
+        <br />
+        <br />
+        <a href="Default.aspx" style="color: #FFFFFF">Home</a>&nbsp; |&nbsp; 
+        <a href="NewRecipe.aspx" style="color: #FFFFFF">New Recipe</a>&nbsp; |&nbsp; 
+        <a href="AboutUs.aspx" style="color: #FFFFFF">About Us</a>&nbsp; |&nbsp; 
+        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact</a>
+    </div>
+    <div class="center">
 
         <!-- Check to see if you are in postback.  If not, display the contact form. -->
         <% If Not IsPostBack Then%>Your email address:<br />
@@ -35,8 +50,10 @@
         <%End If%>
 
         <br />
-        <div class="footer" >@ 2014 Software Development & Design<br />
+        <div class="footer" >&#169 2014. Kboyda HW6 - Software Development & Design
+            <br />
             </div>
+    </div>
     </form>
     
 </body>
