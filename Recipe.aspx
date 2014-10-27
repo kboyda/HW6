@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
      <div class="center">
-        <div class="header">
+        <div class="header1">
             <br />
                 Wicked Easy Recipes
 
@@ -21,7 +21,7 @@
         <a href="Default.aspx" style="color: #FFFFFF">Home</a>&nbsp; |&nbsp; 
         <a href="NewRecipe.aspx" style="color: #FFFFFF">New Recipe</a>&nbsp; |&nbsp; 
         <a href="AboutUs.aspx" style="color: #FFFFFF">About Us</a>&nbsp; |&nbsp; 
-        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact</a>
+        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact Us</a>
     </div>
     <div>
     
@@ -55,9 +55,9 @@
         </asp:SqlDataSource>
         <br />
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="recipeID" DataSourceID="SqlDataSource1" Height="50px" HorizontalAlign="Center" Width="245px">
-             <CommandRowStyle BackColor="#FFFF99" Font-Bold="True" />
-             <EditRowStyle BackColor="LightCoral" />
-             <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+             <CommandRowStyle BackColor="LightCoral" Font-Bold="True" />
+             <EditRowStyle BackColor="#FFFF99" />
+             <FieldHeaderStyle BackColor="LightCoral" Font-Bold="True" />
             <Fields>
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
                 <asp:BoundField DataField="submitted_by" HeaderText="Submitted By" SortExpression="submitted_by" />
@@ -70,13 +70,13 @@
                 <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             </Fields>
-             <FooterStyle BackColor="#FFFF99" Font-Bold="True" ForeColor="White" />
-             <HeaderStyle BackColor="#FFFF99" Font-Bold="True" ForeColor="White" />
-             <PagerStyle BackColor="#FFFF99" ForeColor="LightCoral" HorizontalAlign="Center" />
-             <RowStyle BackColor="LightCoral" />
+             <FooterStyle BackColor="Tan" Font-Bold="True" ForeColor="White" />
+             <HeaderStyle BackColor="LightCoral" Font-Bold="True" ForeColor="White" />
+             <PagerStyle BackColor="LightCoral" ForeColor="LightCoral" HorizontalAlign="Center" />
+             <RowStyle BackColor="#FFFF99" />
         </asp:DetailsView>
         <br />
-        <span class="delRecipe"><asp:Label ID="lbl_delRecipe" runat="server"></asp:Label></span>
+        <span class="delRecipe">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lbl_delRecipe" runat="server"></asp:Label></span>
         <br />
     
     </div>

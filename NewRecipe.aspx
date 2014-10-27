@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
        <div class="center">
-        <div class="header">
+        <div class="header1">
             <br />
                 Wicked Easy Recipes
 
@@ -21,7 +21,7 @@
         <a href="Default.aspx" style="color: #FFFFFF">Home</a>&nbsp; |&nbsp; 
         <a href="NewRecipe.aspx" style="color: #FFFFFF">New Recipe</a>&nbsp; |&nbsp; 
         <a href="AboutUs.aspx" style="color: #FFFFFF">About Us</a>&nbsp; |&nbsp; 
-        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact</a>
+        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact Us</a>
     </div>
     <div>
     
@@ -55,6 +55,9 @@
         </asp:SqlDataSource>
         <br />
         <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="50px" Width="283px" AutoGenerateRows="False" DataKeyNames="recipeID" HorizontalAlign="Center">
+             <CommandRowStyle BackColor="LightCoral" Font-Bold="True" />
+             <EditRowStyle BackColor="#FFFF99" />
+             <FieldHeaderStyle BackColor="LightCoral" Font-Bold="True" />
             <Fields>
                 <asp:BoundField DataField="recipeID" HeaderText="recipeID" InsertVisible="False" ReadOnly="True" SortExpression="recipeID" />
                 <asp:BoundField DataField="recipe_name" HeaderText="Recipe Name" SortExpression="recipe_name" />
@@ -68,6 +71,10 @@
                 <asp:BoundField DataField="notes" HeaderText="Notes" SortExpression="notes" />
                 <asp:CommandField ShowInsertButton="True" />
             </Fields>
+             <FooterStyle BackColor="Tan" Font-Bold="True" ForeColor="White" />
+             <HeaderStyle BackColor="LightCoral" Font-Bold="True" ForeColor="White" />
+             <PagerStyle BackColor="LightCoral" ForeColor="LightCoral" HorizontalAlign="Center" />
+             <RowStyle BackColor="#FFFF99" />
         </asp:DetailsView>
     
     

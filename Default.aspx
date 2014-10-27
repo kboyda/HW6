@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="center">
-        <div class="header">
+        <div class="header1">
             <br />
                 Wicked Easy Recipes
 
@@ -21,7 +21,7 @@
        <a href="Default.aspx" style="color: #FFFFFF">Home</a>&nbsp; |&nbsp; 
         <a href="NewRecipe.aspx" style="color: #FFFFFF">New Recipe</a>&nbsp; |&nbsp; 
         <a href="AboutUs.aspx" style="color: #FFFFFF">About Us</a>&nbsp; |&nbsp; 
-        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact</a>
+        <a href="ContactUs.aspx" style="color: #FFFFFF">Contact Us</a>
     </div>
     <div>
 
